@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Timéo Dave Seyapdje — Développeur Full-Stack</title>
 
-  <!-- Geist-like fonts (Inter = closest Google Fonts match; JetBrains Mono for terminal labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
 
   <style>
-    /* ─── DESIGN SYSTEM ─────────────────────────────────────────────────────
-       Inspired by: Vercel (typography precision, shadow-as-border, tight tracking)
-                  + Raycast (dark chrome, gradient accents, premium dark UI)
-       ─────────────────────────────────────────────────────────────────────── */
     :root {
       /* Vercel-dark neutral scale */
-      --bg:           #111318;
-      --surface-1:    #181b22;
-      --surface-2:    #1e222c;
-      --surface-3:    #252a36;
-      --surface-4:    #2d3344;
+      --bg: #111318;
+      --surface-1: #181b22;
+      --surface-2: #1e222c;
+      --surface-3: #252a36;
+      --surface-4: #2d3344;
 
       /* Text */
       --text-primary: #ededed;
-      --text-2:       #a1a1a1;
-      --text-3:       #666666;
+      --text-2: #a1a1a1;
+      --text-3: #666666;
 
       /* Vercel accents (dark-mode inverted) */
-      --blue:         #0070f3;
-      --blue-glow:    rgba(0, 112, 243, 0.25);
-      --cyan:         #50e3c2;
-      --pink:         #de1d8d;
-      --green:        #22c55e;
-      --purple:       #7928ca;
-      --orange:       #f97316;
+      --blue: #0070f3;
+      --blue-glow: rgba(0, 112, 243, 0.25);
+      --cyan: #50e3c2;
+      --pink: #de1d8d;
+      --green: #22c55e;
+      --purple: #7928ca;
+      --orange: #f97316;
 
-      /* Shadow-as-border (Vercel's signature — adapted for dark) */
-      --border:       0px 0px 0px 1px rgba(255,255,255,0.08);
-      --border-hover: 0px 0px 0px 1px rgba(255,255,255,0.16);
-      --card-shadow:  0px 0px 0px 1px rgba(255,255,255,0.06),
-                      0px 2px 4px rgba(0,0,0,0.5),
-                      0px 8px 16px rgba(0,0,0,0.3);
-      --card-hover:   0px 0px 0px 1px rgba(255,255,255,0.1),
-                      0px 4px 8px rgba(0,0,0,0.6),
-                      0px 16px 32px rgba(0,0,0,0.4);
+      /* Shadow-as-border */
+      --border: 0px 0px 0px 1px rgba(255, 255, 255, 0.08);
+      --border-hover: 0px 0px 0px 1px rgba(255, 255, 255, 0.16);
+      --card-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.06),
+        0px 2px 4px rgba(0, 0, 0, 0.5),
+        0px 8px 16px rgba(0, 0, 0, 0.3);
+      --card-hover: 0px 0px 0px 1px rgba(255, 255, 255, 0.1),
+        0px 4px 8px rgba(0, 0, 0, 0.6),
+        0px 16px 32px rgba(0, 0, 0, 0.4);
 
       /* Focus ring */
-      --focus:        hsla(212, 100%, 48%, 1);
+      --focus: hsla(212, 100%, 48%, 1);
 
-      /* Typography (Vercel scale with negative tracking) */
-      --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
-      --font-mono:    'JetBrains Mono', 'Geist Mono', ui-monospace, 'Cascadia Code', monospace;
+      /* Typography */
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Geist Mono', ui-monospace, 'Cascadia Code', monospace;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-feature-settings: "liga" 1; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-feature-settings: "liga" 1;
+    }
 
     body {
       font-family: var(--font-sans);
@@ -69,13 +77,28 @@
 
     /* ─── Reduced motion ─── */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
     /* ─── Scrollbar ─── */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--surface-4); border-radius: 3px; }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface-4);
+      border-radius: 3px;
+    }
 
     /* ─── UTILITY ─── */
     .mono {
@@ -111,7 +134,7 @@
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
-      box-shadow: var(--border), 0 8px 32px rgba(0,0,0,0.4);
+      box-shadow: var(--border), 0 8px 32px rgba(0, 0, 0, 0.4);
       border-radius: 12px;
       padding: 10px 16px;
       display: flex;
@@ -132,7 +155,12 @@
       line-height: 1;
     }
 
-    .nav-logo-text { display: flex; align-items: baseline; gap: 1px; }
+    .nav-logo-text {
+      display: flex;
+      align-items: baseline;
+      gap: 1px;
+    }
+
     .nav-logo-text .accent {
       color: #50e3c2;
       font-weight: 800;
@@ -148,8 +176,17 @@
     }
 
     @keyframes pulse-dot {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
-      50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+      }
+
+      50% {
+        opacity: 0.8;
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0);
+      }
     }
 
     .nav-links {
@@ -171,9 +208,10 @@
       cursor: pointer;
     }
 
-    .nav-links a:hover, .nav-links a:focus {
+    .nav-links a:hover,
+    .nav-links a:focus {
       color: var(--text-primary);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       outline: none;
     }
 
@@ -190,7 +228,7 @@
     }
 
     .nav-cta:hover {
-      background: rgba(237,237,237,0.9) !important;
+      background: rgba(237, 237, 237, 0.9) !important;
     }
 
     .hamburger {
@@ -204,20 +242,27 @@
     }
 
     @media (max-width: 600px) {
-      .nav-links { display: none; }
+      .nav-links {
+        display: none;
+      }
+
       .nav-links.open {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: calc(100% + 8px);
-        left: 0; right: 0;
-        background: rgba(10,10,10,0.98);
-        box-shadow: var(--border), 0 16px 32px rgba(0,0,0,0.6);
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        box-shadow: var(--border), 0 16px 32px rgba(0, 0, 0, 0.6);
         border-radius: 12px;
         padding: 8px;
         gap: 2px;
       }
-      .hamburger { display: block; }
+
+      .hamburger {
+        display: block;
+      }
     }
 
     /* ─── HERO ─── */
@@ -235,11 +280,21 @@
     }
 
     @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; }
-      #hero-icons { height: 260px; order: -1; margin-bottom: 0; min-height: 260px; }
+      #hero {
+        grid-template-columns: 1fr;
+      }
+
+      #hero-icons {
+        height: 260px;
+        order: -1;
+        margin-bottom: 0;
+        min-height: 260px;
+      }
     }
 
-    .hero-content { width: 100%; }
+    .hero-content {
+      width: 100%;
+    }
 
     /* Hero icons wrapper */
     #hero-icons {
@@ -276,18 +331,18 @@
       animation: pulse-dot 2s ease-in-out infinite;
     }
 
-    /* Hero headline — Vercel-style aggressive compression */
+    /* Hero headline */
     .hero-h1 {
       font-size: clamp(3rem, 9vw, 6.5rem);
       font-weight: 600;
       line-height: 1.05;
-      letter-spacing: -0.04em;  /* Vercel: -2.4px to -2.88px at display */
+      letter-spacing: -0.04em;
       color: var(--text-primary);
       margin-bottom: 24px;
       animation: fadeUp 0.5s ease-out 0.08s both;
     }
 
-    /* Gradient word — Raycast-style vibrant accent */
+    /* Gradient word */
     .hero-accent {
       background: linear-gradient(90deg, #0070f3 0%, #50e3c2 60%, #de1d8d 100%);
       -webkit-background-clip: text;
@@ -323,7 +378,7 @@
       animation: fadeUp 0.5s ease-out 0.2s both;
     }
 
-    /* Primary button — Vercel dark style */
+    /* Primary button */
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -342,14 +397,17 @@
     }
 
     .btn-primary:hover {
-      background: rgba(237,237,237,0.9);
+      background: rgba(237, 237, 237, 0.9);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(255,255,255,0.12);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.12);
     }
 
-    .btn-primary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
 
-    /* Ghost button — Vercel shadow-bordered style */
+    /* Ghost button */
     .btn-ghost {
       display: inline-flex;
       align-items: center;
@@ -374,7 +432,10 @@
       transform: translateY(-1px);
     }
 
-    .btn-ghost:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+    .btn-ghost:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
 
     /* Hero scrolling tech pills */
     .hero-tech {
@@ -416,8 +477,15 @@
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ─── SECTION WRAPPER ─── */
@@ -441,7 +509,8 @@
     .section-h2 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 600;
-      letter-spacing: -0.03em; /* Vercel: -1.28px at ~32px */
+      letter-spacing: -0.03em;
+      /* Vercel: -1.28px at ~32px */
       line-height: 1.15;
       color: var(--text-primary);
       margin-bottom: 8px;
@@ -460,7 +529,7 @@
     .divider {
       width: 100%;
       height: 1px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       margin: 0;
     }
 
@@ -469,7 +538,7 @@
       display: flex;
       flex-direction: column;
       gap: 1px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--card-shadow);
@@ -487,20 +556,31 @@
       position: relative;
     }
 
-    .project-row:first-child { border-radius: 16px 16px 0 0; }
-    .project-row:last-child  { border-radius: 0 0 16px 16px; }
+    .project-row:first-child {
+      border-radius: 16px 16px 0 0;
+    }
+
+    .project-row:last-child {
+      border-radius: 0 0 16px 16px;
+    }
 
     .project-row::after {
       content: '';
       position: absolute;
-      left: 32px; right: 32px; bottom: -1px;
+      left: 32px;
+      right: 32px;
+      bottom: -1px;
       height: 1px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
     }
 
-    .project-row:last-child::after { display: none; }
+    .project-row:last-child::after {
+      display: none;
+    }
 
-    .project-row:hover { background: var(--surface-2); }
+    .project-row:hover {
+      background: var(--surface-2);
+    }
 
     .project-num {
       font-family: var(--font-mono);
@@ -538,7 +618,7 @@
       font-size: 0.68rem;
       color: var(--text-3);
       background: var(--surface-3);
-      box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.06);
+      box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.06);
       border-radius: 4px;
       padding: 3px 8px;
       letter-spacing: 0.02em;
@@ -547,7 +627,7 @@
 
     .project-row:hover .stack-tag {
       color: var(--text-2);
-      box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
     }
 
     .project-meta {
@@ -586,7 +666,10 @@
       box-shadow: var(--border-hover);
     }
 
-    .project-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .project-link:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
 
     .project-badge {
       font-family: var(--font-mono);
@@ -595,15 +678,22 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--blue);
-      background: rgba(0,112,243,0.1);
-      box-shadow: 0px 0px 0px 1px rgba(0,112,243,0.2);
+      background: rgba(0, 112, 243, 0.1);
+      box-shadow: 0px 0px 0px 1px rgba(0, 112, 243, 0.2);
       border-radius: 9999px;
       padding: 3px 10px;
     }
 
     @media (max-width: 560px) {
-      .project-row { grid-template-columns: 1fr; padding: 24px 20px; }
-      .project-meta { flex-direction: row; align-items: center; }
+      .project-row {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+      }
+
+      .project-meta {
+        flex-direction: row;
+        align-items: center;
+      }
     }
 
     /* ─── ABOUT ─── */
@@ -613,7 +703,11 @@
       gap: 32px;
     }
 
-    @media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 680px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .about-card {
       background: var(--surface-1);
@@ -623,7 +717,9 @@
       transition: box-shadow 200ms ease;
     }
 
-    .about-card:hover { box-shadow: var(--card-hover); }
+    .about-card:hover {
+      box-shadow: var(--card-hover);
+    }
 
     .about-card-label {
       font-family: var(--font-mono);
@@ -649,12 +745,15 @@
       letter-spacing: -0.01em;
     }
 
-    .about-card-text strong { color: var(--text-primary); font-weight: 500; }
+    .about-card-text strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
 
     /* ─── CONTACT ─── */
     .contact-card {
       background: var(--surface-1);
-      box-shadow: var(--card-shadow), 0 0 80px rgba(0,112,243,0.04);
+      box-shadow: var(--card-shadow), 0 0 80px rgba(0, 112, 243, 0.04);
       border-radius: 16px;
       padding: 48px 40px;
       text-align: center;
@@ -666,9 +765,11 @@
     .contact-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 20%; right: 20%;
+      top: 0;
+      left: 20%;
+      right: 20%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,112,243,0.6), rgba(80,227,194,0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 112, 243, 0.6), rgba(80, 227, 194, 0.4), transparent);
     }
 
     .contact-title {
@@ -715,7 +816,7 @@
     }
 
     .contact-link-primary:hover {
-      background: rgba(237,237,237,0.9);
+      background: rgba(237, 237, 237, 0.9);
       transform: translateY(-1px);
     }
 
@@ -730,14 +831,17 @@
       transform: translateY(-1px);
     }
 
-    .contact-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+    .contact-link:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
 
     /* ─── FOOTER ─── */
     footer {
       position: relative;
       z-index: 1;
       padding: 28px 24px;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -754,8 +858,15 @@
       letter-spacing: 0.02em;
     }
 
-    .footer-text a { color: var(--text-2); text-decoration: none; transition: color 150ms ease; }
-    .footer-text a:hover { color: var(--text-primary); }
+    .footer-text a {
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color 150ms ease;
+    }
+
+    .footer-text a:hover {
+      color: var(--text-primary);
+    }
 
     .footer-stack {
       display: flex;
@@ -772,13 +883,25 @@
     .reveal {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.55s cubic-bezier(.16,1,.3,1), transform 0.55s cubic-bezier(.16,1,.3,1);
+      transition: opacity 0.55s cubic-bezier(.16, 1, .3, 1), transform 0.55s cubic-bezier(.16, 1, .3, 1);
     }
 
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.08s; }
-    .reveal-delay-2 { transition-delay: 0.16s; }
-    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.24s;
+    }
 
     /* ─── LOADER ─── */
     #loader {
@@ -794,37 +917,72 @@
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
-    #loader.done { opacity: 0; visibility: hidden; }
+    #loader.done {
+      opacity: 0;
+      visibility: hidden;
+    }
 
     .loader-laptop {
-      animation: laptopIn 0.6s cubic-bezier(.16,1,.3,1) both;
+      animation: laptopIn 0.6s cubic-bezier(.16, 1, .3, 1) both;
     }
 
     @keyframes laptopIn {
-      from { opacity: 0; transform: translateY(20px) scale(0.92); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.92);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* Screen scanline glow */
     .loader-screen-glow {
       animation: screenOn 0.5s ease 0.3s both;
     }
+
     @keyframes screenOn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .loader-code-line {
       animation: codeAppear 0.3s ease both;
     }
-    .loader-code-line:nth-child(1) { animation-delay: 0.5s; }
-    .loader-code-line:nth-child(2) { animation-delay: 0.65s; }
-    .loader-code-line:nth-child(3) { animation-delay: 0.8s; }
-    .loader-code-line:nth-child(4) { animation-delay: 0.95s; }
+
+    .loader-code-line:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .loader-code-line:nth-child(2) {
+      animation-delay: 0.65s;
+    }
+
+    .loader-code-line:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+
+    .loader-code-line:nth-child(4) {
+      animation-delay: 0.95s;
+    }
 
     @keyframes codeAppear {
-      from { opacity: 0; transform: translateX(-4px); }
-      to   { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: translateX(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     .loader-text {
@@ -847,7 +1005,7 @@
     .loader-bar-wrap {
       width: 200px;
       height: 2px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 2px;
       overflow: hidden;
       animation: fadeUp 0.4s ease 0.5s both;
@@ -858,7 +1016,7 @@
       width: 0%;
       background: linear-gradient(90deg, #0070f3, #50e3c2);
       border-radius: 2px;
-      transition: width 2s cubic-bezier(.4,0,.2,1);
+      transition: width 2s cubic-bezier(.4, 0, .2, 1);
     }
 
     .loader-pct {
@@ -881,9 +1039,9 @@
       position: absolute;
       font-family: var(--font-mono);
       font-weight: 700;
-      color: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
+      color: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.02);
       border-radius: 10px;
       padding: 10px 14px;
       white-space: nowrap;
@@ -897,20 +1055,43 @@
     }
 
     .code-icon:hover {
-      color: rgba(255,255,255,0.55);
-      border-color: rgba(0,112,243,0.35);
-      background: rgba(0,112,243,0.06);
+      color: rgba(255, 255, 255, 0.55);
+      border-color: rgba(0, 112, 243, 0.35);
+      background: rgba(0, 112, 243, 0.06);
     }
 
-    .code-icon .kw  { color: #de1d8d; opacity: 1; }
-    .code-icon .fn  { color: #0070f3; opacity: 1; }
-    .code-icon .str { color: #50e3c2; opacity: 1; }
-    .code-icon .cm  { color: #666; opacity: 1; }
+    .code-icon .kw {
+      color: #de1d8d;
+      opacity: 1;
+    }
+
+    .code-icon .fn {
+      color: #0070f3;
+      opacity: 1;
+    }
+
+    .code-icon .str {
+      color: #50e3c2;
+      opacity: 1;
+    }
+
+    .code-icon .cm {
+      color: #666;
+      opacity: 1;
+    }
 
     @keyframes floatIcon {
-      0%   { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-      50%  { transform: translateY(var(--dy, -18px)) rotate(var(--rot2, 1deg)); }
-      100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+      0% {
+        transform: translateY(0px) rotate(var(--rot, 0deg));
+      }
+
+      50% {
+        transform: translateY(var(--dy, -18px)) rotate(var(--rot2, 1deg));
+      }
+
+      100% {
+        transform: translateY(0px) rotate(var(--rot, 0deg));
+      }
     }
 
     /* ─── SKILLS 3D ─── */
@@ -933,10 +1114,10 @@
       border-radius: 20px;
       padding: 28px 32px 36px;
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.07),
-        0 40px 100px rgba(0,0,0,0.9),
-        0 12px 30px rgba(0,0,0,0.7),
-        inset 0 1px 0 rgba(255,255,255,0.06);
+        0 0 0 1px rgba(255, 255, 255, 0.07),
+        0 40px 100px rgba(0, 0, 0, 0.9),
+        0 12px 30px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
       width: 100%;
       position: relative;
     }
@@ -944,20 +1125,25 @@
     .keyboard::before {
       content: '';
       position: absolute;
-      top: 14px; left: 50%; transform: translateX(-50%);
-      width: 60px; height: 4px;
-      background: rgba(255,255,255,0.06);
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 2px;
     }
 
     .keyboard::after {
       content: '';
       position: absolute;
-      bottom: -12px; left: 14px; right: 14px;
+      bottom: -12px;
+      left: 14px;
+      right: 14px;
       height: 12px;
       background: linear-gradient(180deg, #0a0c0f, #070809);
       border-radius: 0 0 18px 18px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.02);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.02);
     }
 
     .kb-row {
@@ -987,10 +1173,10 @@
       justify-content: center;
       gap: 6px;
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.08),
         0 6px 0 0 #0a0c0f,
-        0 7px 0 0 rgba(255,255,255,0.02),
-        inset 0 1px 0 rgba(255,255,255,0.07);
+        0 7px 0 0 rgba(255, 255, 255, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
       transition: transform 80ms ease, box-shadow 80ms ease, background 150ms ease;
     }
 
@@ -1006,7 +1192,8 @@
     }
 
     .kb-key-icon-wrap {
-      width: 26px; height: 26px;
+      width: 26px;
+      height: 26px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1018,56 +1205,95 @@
     .kb-key:not(.kb-deco):hover .kb-key-face {
       background: linear-gradient(160deg, #2e323d, #24272f);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.13),
+        0 0 0 1px rgba(255, 255, 255, 0.13),
         0 6px 0 0 #0a0c0f,
-        0 7px 0 0 rgba(255,255,255,0.02),
-        inset 0 1px 0 rgba(255,255,255,0.1);
+        0 7px 0 0 rgba(255, 255, 255, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
-    .kb-key:not(.kb-deco):hover .kb-key-label { color: var(--text-2); }
-    .kb-key:not(.kb-deco):hover .kb-key-icon-wrap { opacity: 0.9; }
+
+    .kb-key:not(.kb-deco):hover .kb-key-label {
+      color: var(--text-2);
+    }
+
+    .kb-key:not(.kb-deco):hover .kb-key-icon-wrap {
+      opacity: 0.9;
+    }
 
     /* Press */
     .kb-key:not(.kb-deco):active .kb-key-face,
     .kb-key.pressing .kb-key-face {
       transform: translateY(5px);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.08),
         0 1px 0 0 #0a0c0f;
     }
 
     /* Active */
     .kb-key.active .kb-key-face {
-      background: linear-gradient(160deg, rgba(0,112,243,0.22), rgba(0,80,200,0.16));
+      background: linear-gradient(160deg, rgba(0, 112, 243, 0.22), rgba(0, 80, 200, 0.16));
       box-shadow:
-        0 0 0 1px rgba(0,112,243,0.5),
-        0 6px 0 0 rgba(0,70,180,0.4),
-        0 0 20px rgba(0,112,243,0.25),
-        inset 0 1px 0 rgba(100,180,255,0.15);
+        0 0 0 1px rgba(0, 112, 243, 0.5),
+        0 6px 0 0 rgba(0, 70, 180, 0.4),
+        0 0 20px rgba(0, 112, 243, 0.25),
+        inset 0 1px 0 rgba(100, 180, 255, 0.15);
     }
-    .kb-key.active .kb-key-label { color: #6db8ff; }
-    .kb-key.active .kb-key-icon-wrap { opacity: 1; }
+
+    .kb-key.active .kb-key-label {
+      color: #6db8ff;
+    }
+
+    .kb-key.active .kb-key-icon-wrap {
+      opacity: 1;
+    }
 
     /* Deco keys */
-    .kb-deco { cursor: default; }
+    .kb-deco {
+      cursor: default;
+    }
+
     .kb-deco .kb-key-face {
       background: linear-gradient(160deg, #1a1d23, #14161b);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.05),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
         0 6px 0 0 #0a0c0f,
-        inset 0 1px 0 rgba(255,255,255,0.04);
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }
-    .kb-deco .kb-key-label { color: #2e3340; font-size: 0.65rem; }
+
+    .kb-deco .kb-key-label {
+      color: #2e3340;
+      font-size: 0.65rem;
+    }
 
     /* Key width helpers — used via inline style flex-basis */
-    .kb-key { flex: 1; }
-    .kb-key.w1   { flex: 1; }
-    .kb-key.w1-5 { flex: 1.5; }
-    .kb-key.w2   { flex: 2; }
-    .kb-key.w2-5 { flex: 2.5; }
-    .kb-key.w6   { flex: 6; }
+    .kb-key {
+      flex: 1;
+    }
+
+    .kb-key.w1 {
+      flex: 1;
+    }
+
+    .kb-key.w1-5 {
+      flex: 1.5;
+    }
+
+    .kb-key.w2 {
+      flex: 2;
+    }
+
+    .kb-key.w2-5 {
+      flex: 2.5;
+    }
+
+    .kb-key.w6 {
+      flex: 6;
+    }
 
     /* ─── SKILL DETAIL CARD ─── */
-    .skill-detail { margin-top: 32px; display: none; }
+    .skill-detail {
+      margin-top: 32px;
+      display: none;
+    }
 
     .skill-detail.open {
       display: grid;
@@ -1075,93 +1301,161 @@
       gap: 24px;
       background: var(--surface-1);
       box-shadow:
-        0 0 0 1px rgba(0,112,243,0.18),
-        0 12px 32px rgba(0,0,0,0.4);
+        0 0 0 1px rgba(0, 112, 243, 0.18),
+        0 12px 32px rgba(0, 0, 0, 0.4);
       border-radius: 16px;
       padding: 24px 28px;
-      animation: fadeUp 0.2s cubic-bezier(.16,1,.3,1) both;
+      animation: fadeUp 0.2s cubic-bezier(.16, 1, .3, 1) both;
     }
 
     .sd-icon-wrap {
-      width: 56px; height: 56px;
+      width: 56px;
+      height: 56px;
       border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
 
     .sd-tag {
       font-family: var(--font-mono);
-      font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 9999px;
-      background: rgba(0,112,243,0.1); color: #4da8ff;
-      box-shadow: 0 0 0 1px rgba(0,112,243,0.2);
-      display: inline-block; margin-bottom: 8px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      background: rgba(0, 112, 243, 0.1);
+      color: #4da8ff;
+      box-shadow: 0 0 0 1px rgba(0, 112, 243, 0.2);
+      display: inline-block;
+      margin-bottom: 8px;
     }
 
     .sd-name {
-      font-size: 1.1rem; font-weight: 600;
-      letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
     }
 
     .sd-desc {
-      font-size: 0.875rem; color: var(--text-2);
-      line-height: 1.7; letter-spacing: -0.01em; margin-bottom: 12px;
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
     }
 
-    .sd-projects { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sd-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
 
     .sd-proj-tag {
-      font-family: var(--font-mono); font-size: 0.68rem;
-      color: var(--text-3); background: var(--surface-3);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
-      border-radius: 4px; padding: 3px 9px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-3);
+      background: var(--surface-3);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      padding: 3px 9px;
     }
 
-    .sd-level { display: flex; gap: 5px; margin-top: 12px; align-items: center; }
-    .sd-level-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-3); margin-left: 4px; }
+    .sd-level {
+      display: flex;
+      gap: 5px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .sd-level-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-3);
+      margin-left: 4px;
+    }
 
     .sd-dot {
-      width: 10px; height: 10px; border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
       background: var(--surface-4);
     }
-    .sd-dot.on { background: #0070f3; box-shadow: 0 0 8px rgba(0,112,243,0.6); }
+
+    .sd-dot.on {
+      background: #0070f3;
+      box-shadow: 0 0 8px rgba(0, 112, 243, 0.6);
+    }
 
     @media (max-width: 700px) {
-      .keyboard { transform: rotateX(14deg) rotateY(0deg); padding: 16px 14px 20px; gap: 5px; }
-      .kb-key-face { min-height: 56px; padding: 10px 6px 8px; gap: 4px; }
-      .kb-key-icon-wrap { width: 20px; height: 20px; }
-      .kb-key-label { font-size: 0.6rem; }
-      .kb-key.w6 .kb-key-face { /* space bar ok */ }
-      .skill-detail.open { grid-template-columns: 1fr; }
-      .sd-icon-wrap { display: none; }
+      .keyboard {
+        transform: rotateX(14deg) rotateY(0deg);
+        padding: 16px 14px 20px;
+        gap: 5px;
+      }
+
+      .kb-key-face {
+        min-height: 56px;
+        padding: 10px 6px 8px;
+        gap: 4px;
+      }
+
+      .kb-key-icon-wrap {
+        width: 20px;
+        height: 20px;
+      }
+
+      .kb-key-label {
+        font-size: 0.6rem;
+      }
+
+      .kb-key.w6 .kb-key-face {
+        /* space bar ok */
+      }
+
+      .skill-detail.open {
+        grid-template-columns: 1fr;
+      }
+
+      .sd-icon-wrap {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ─── LOADER ─── -->
   <div id="loader" role="status" aria-live="polite" aria-label="Chargement du portfolio">
     <!-- SVG Laptop -->
-    <svg class="loader-laptop" width="220" height="160" viewBox="0 0 220 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="loader-laptop" width="220" height="160" viewBox="0 0 220 160" fill="none"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <!-- Base / clavier -->
-      <rect x="10" y="138" width="200" height="14" rx="5" fill="#1a1a1a" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-      <rect x="70" y="138" width="80" height="4" rx="2" fill="#111"/>
+      <rect x="10" y="138" width="200" height="14" rx="5" fill="#1a1a1a" stroke="rgba(255,255,255,0.08)"
+        stroke-width="1" />
+      <rect x="70" y="138" width="80" height="4" rx="2" fill="#111" />
       <!-- Corps écran -->
-      <rect x="28" y="12" width="164" height="126" rx="8" fill="#0a0a0a" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
+      <rect x="28" y="12" width="164" height="126" rx="8" fill="#0a0a0a" stroke="rgba(255,255,255,0.1)"
+        stroke-width="1.2" />
       <!-- Charnière -->
-      <rect x="10" y="134" width="200" height="6" rx="3" fill="#111" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <rect x="10" y="134" width="200" height="6" rx="3" fill="#111" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
       <!-- Écran (surface) -->
-      <rect x="36" y="20" width="148" height="110" rx="4" fill="#050505"/>
+      <rect x="36" y="20" width="148" height="110" rx="4" fill="#050505" />
       <!-- Lueur écran -->
-      <rect class="loader-screen-glow" x="36" y="20" width="148" height="110" rx="4" fill="none" stroke="#0070f3" stroke-width="0.5" opacity="0.4"/>
+      <rect class="loader-screen-glow" x="36" y="20" width="148" height="110" rx="4" fill="none" stroke="#0070f3"
+        stroke-width="0.5" opacity="0.4" />
       <!-- Lignes de code dans l'écran -->
       <g class="loader-screen-glow">
         <!-- Barre de titre éditeur -->
-        <rect x="36" y="20" width="148" height="14" rx="4" fill="#111"/>
-        <circle cx="47" cy="27" r="3" fill="#ff5b4f" opacity="0.8"/>
-        <circle cx="57" cy="27" r="3" fill="#f9c74f" opacity="0.8"/>
-        <circle cx="67" cy="27" r="3" fill="#22c55e" opacity="0.8"/>
+        <rect x="36" y="20" width="148" height="14" rx="4" fill="#111" />
+        <circle cx="47" cy="27" r="3" fill="#ff5b4f" opacity="0.8" />
+        <circle cx="57" cy="27" r="3" fill="#f9c74f" opacity="0.8" />
+        <circle cx="67" cy="27" r="3" fill="#22c55e" opacity="0.8" />
         <text x="100" y="31" font-family="monospace" font-size="6" fill="#444" text-anchor="middle">portfolio.tsx</text>
         <!-- Numéros de ligne -->
         <text x="44" y="50" font-family="monospace" font-size="6.5" fill="#333">1</text>
@@ -1200,11 +1494,11 @@
         </g>
         <!-- Curseur clignotant -->
         <rect x="56" y="107" width="5" height="9" rx="1" fill="#0070f3" opacity="0.9">
-          <animate attributeName="opacity" values="0.9;0;0.9" dur="1.1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.9;0;0.9" dur="1.1s" repeatCount="indefinite" />
         </rect>
       </g>
       <!-- Logo caméra -->
-      <circle cx="110" cy="16" r="2" fill="#222" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+      <circle cx="110" cy="16" r="2" fill="#222" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />
     </svg>
 
     <p class="loader-text">Bienvenue dans <span>mon portfolio</span></p>
@@ -1228,8 +1522,11 @@
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
     </div>
@@ -1252,16 +1549,26 @@
       <p class="hero-sub mono" aria-label="Identité">// Timéo Dave Seyapdje · Douala, CM</p>
 
       <p class="hero-desc">
-        Je conçois des applications web performantes — SaaS financiers, plateformes e-commerce, outils IA — avec un focus sur la précision, la scalabilité et le marché africain.
+        Je conçois des applications web performantes — SaaS financiers, plateformes e-commerce, outils IA — avec un
+        focus sur la précision, la scalabilité et le marché africain.
       </p>
 
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
           Voir les projets
         </a>
         <a href="#contact" class="btn-ghost">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
           seyapdjetimeo@gmail.com
         </a>
       </div>
@@ -1291,61 +1598,105 @@
 
       <!-- Next.js -->
       <div class="code-icon" style="top:6%;left:10%;--dy:-20px;--rot:-2deg;--rot2:2deg;animation-duration:5.2s;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#fff;opacity:.7"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.859 8.292 8.208 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 01.237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 01.233-.296c.096-.05.13-.054.499-.054z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#fff;opacity:.7">
+          <path
+            d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.859 8.292 8.208 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 01.237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 01.233-.296c.096-.05.13-.054.499-.054z" />
+        </svg>
         <span class="kw">import</span> <span class="fn">App</span>
       </div>
 
       <!-- TypeScript -->
-      <div class="code-icon" style="top:22%;left:62%;--dy:-16px;--rot:1deg;--rot2:-1deg;animation-duration:6.1s;animation-delay:0.4s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" style="flex-shrink:0"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" fill="white"/></svg>
+      <div class="code-icon"
+        style="top:22%;left:62%;--dy:-16px;--rot:1deg;--rot2:-1deg;animation-duration:6.1s;animation-delay:0.4s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" style="flex-shrink:0">
+          <rect width="24" height="24" rx="3" fill="#3178C6" />
+          <path
+            d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"
+            fill="white" />
+        </svg>
         <span class="kw">type</span> T = <span class="str">string</span>
       </div>
 
       <!-- React atom -->
-      <div class="code-icon" style="top:38%;left:4%;--dy:-22px;--rot:2deg;--rot2:-2deg;animation-duration:7s;animation-delay:0.8s;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/></svg>
+      <div class="code-icon"
+        style="top:38%;left:4%;--dy:-22px;--rot:2deg;--rot2:-2deg;animation-duration:7s;animation-delay:0.8s;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="2.2" fill="#61DAFB" />
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" />
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"
+            transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"
+            transform="rotate(120 12 12)" />
+        </svg>
         <span class="str">&lt;Component</span> <span class="fn">/&gt;</span>
       </div>
 
       <!-- Async/await -->
-      <div class="code-icon" style="top:34%;left:72%;--dy:-18px;--rot:-1deg;--rot2:2deg;animation-duration:5.8s;animation-delay:0.2s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#50e3c2" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+      <div class="code-icon"
+        style="top:34%;left:72%;--dy:-18px;--rot:-1deg;--rot2:2deg;animation-duration:5.8s;animation-delay:0.2s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#50e3c2" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4" />
+        </svg>
         <span class="fn">async</span> <span class="kw">await</span>
       </div>
 
       <!-- Prisma -->
-      <div class="code-icon" style="top:57%;left:18%;--dy:-24px;--rot:1deg;--rot2:-2deg;animation-duration:6.4s;animation-delay:1s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A9EF1"><path d="M21.807 17.49L13.885.442A2.136 2.136 0 0012.01 0h-.02a2.136 2.136 0 00-1.875 1.442L2.192 17.49a2.08 2.08 0 00.46 2.252l7.827 6.258H1a1 1 0 000 2h22a1 1 0 000-2h-9.479l7.827-6.258a2.08 2.08 0 00.459-2.252zM12 3.41l6.154 13.514-6.154 4.925V3.41z"/></svg>
+      <div class="code-icon"
+        style="top:57%;left:18%;--dy:-24px;--rot:1deg;--rot2:-2deg;animation-duration:6.4s;animation-delay:1s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A9EF1">
+          <path
+            d="M21.807 17.49L13.885.442A2.136 2.136 0 0012.01 0h-.02a2.136 2.136 0 00-1.875 1.442L2.192 17.49a2.08 2.08 0 00.46 2.252l7.827 6.258H1a1 1 0 000 2h22a1 1 0 000-2h-9.479l7.827-6.258a2.08 2.08 0 00.459-2.252zM12 3.41l6.154 13.514-6.154 4.925V3.41z" />
+        </svg>
         <span class="cm">// db.query()</span>
       </div>
 
       <!-- Stripe -->
-      <div class="code-icon" style="top:62%;left:66%;--dy:-16px;--rot:-2deg;--rot2:1deg;animation-duration:5.5s;animation-delay:0.6s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#6772E5"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
+      <div class="code-icon"
+        style="top:62%;left:66%;--dy:-16px;--rot:-2deg;--rot2:1deg;animation-duration:5.5s;animation-delay:0.6s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#6772E5">
+          <path
+            d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" />
+        </svg>
         <span class="fn">stripe</span><span class="str">.pay()</span>
       </div>
 
       <!-- Git -->
-      <div class="code-icon" style="top:77%;left:7%;--dy:-20px;--rot:0deg;--rot2:2deg;animation-duration:6.8s;animation-delay:0.3s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#F05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+      <div class="code-icon"
+        style="top:77%;left:7%;--dy:-20px;--rot:0deg;--rot2:2deg;animation-duration:6.8s;animation-delay:0.3s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#F05032">
+          <path
+            d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187" />
+        </svg>
         <span class="kw">git</span> commit <span class="str">-m</span>
       </div>
 
       <!-- npm run dev -->
-      <div class="code-icon" style="top:79%;left:55%;--dy:-12px;--rot:2deg;--rot2:-1deg;animation-duration:5.9s;animation-delay:0.9s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <div class="code-icon"
+        style="top:79%;left:55%;--dy:-12px;--rot:2deg;--rot2:-1deg;animation-duration:5.9s;animation-delay:0.9s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"
+          stroke-linecap="round">
+          <polygon points="5 3 19 12 5 21 5 3" />
+        </svg>
         <span class="kw">npm</span> <span class="fn">run</span> dev
       </div>
 
       <!-- Vercel -->
-      <div class="code-icon" style="top:10%;left:82%;--dy:-18px;--rot:-1deg;--rot2:2deg;animation-duration:7.2s;animation-delay:0.5s;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg>
+      <div class="code-icon"
+        style="top:10%;left:82%;--dy:-18px;--rot:-1deg;--rot2:2deg;animation-duration:7.2s;animation-delay:0.5s;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+          <path d="M24 22.525H0l12-21.05 12 21.05z" />
+        </svg>
         <span class="fn">vercel</span> <span class="str">--prod</span>
       </div>
 
       <!-- Tailwind -->
-      <div class="code-icon" style="top:48%;left:43%;--dy:-22px;--rot:1deg;--rot2:-2deg;animation-duration:6.6s;animation-delay:0.7s;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
+      <div class="code-icon"
+        style="top:48%;left:43%;--dy:-22px;--rot:1deg;--rot2:-2deg;animation-duration:6.6s;animation-delay:0.7s;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#38BDF8">
+          <path
+            d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+        </svg>
         <span class="cm">className=</span><span class="str">"flex"</span>
       </div>
 
@@ -1369,45 +1720,170 @@
 
         <!-- Row 1 -->
         <div class="kb-row">
-          <div class="kb-key kb-deco" aria-hidden="true"><div class="kb-key-face"><span class="kb-key-label">ESC</span></div></div>
-          <div class="kb-key" data-skill="nextjs" tabindex="0" role="button" aria-label="Next.js"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.859 8.292 8.208 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 01.237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 01.233-.296c.096-.05.13-.054.499-.054z"/></svg></div><span class="kb-key-label">Next.js</span></div></div>
-          <div class="kb-key" data-skill="react" tabindex="0" role="button" aria-label="React"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="12" cy="12" r="2.2" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" transform="rotate(120 12 12)"/></svg></div><span class="kb-key-label">React 19</span></div></div>
-          <div class="kb-key" data-skill="typescript" tabindex="0" role="button" aria-label="TypeScript"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" width="18" height="18"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" fill="white"/></svg></div><span class="kb-key-label">TypeScript</span></div></div>
-          <div class="kb-key" data-skill="postgresql" tabindex="0" role="button" aria-label="PostgreSQL"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#336791" stroke-width="1.8"/><path d="M4 6v6c0 1.657 3.582 3 8 3s8-1.343 8-3V6" stroke="#336791" stroke-width="1.8"/><path d="M4 12v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" stroke="#336791" stroke-width="1.8"/></svg></div><span class="kb-key-label">PostgreSQL</span></div></div>
-          <div class="kb-key" data-skill="prisma" tabindex="0" role="button" aria-label="Prisma"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#4A9EF1" width="16" height="16"><path d="M21.807 17.49L13.885.442A2.136 2.136 0 0012.01 0h-.02a2.136 2.136 0 00-1.875 1.442L2.192 17.49a2.08 2.08 0 00.46 2.252l7.827 6.258H1a1 1 0 000 2h22a1 1 0 000-2h-9.479l7.827-6.258a2.08 2.08 0 00.459-2.252zM12 3.41l6.154 13.514-6.154 4.925V3.41z"/></svg></div><span class="kb-key-label">Prisma</span></div></div>
-          <div class="kb-key" data-skill="stripe" tabindex="0" role="button" aria-label="Stripe"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#6772E5" width="16" height="16"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg></div><span class="kb-key-label">Stripe</span></div></div>
+          <div class="kb-key kb-deco" aria-hidden="true">
+            <div class="kb-key-face"><span class="kb-key-label">ESC</span></div>
+          </div>
+          <div class="kb-key" data-skill="nextjs" tabindex="0" role="button" aria-label="Next.js">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="white" width="18" height="18">
+                  <path
+                    d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.859 8.292 8.208 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 01.237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 01.233-.296c.096-.05.13-.054.499-.054z" />
+                </svg></div><span class="kb-key-label">Next.js</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="react" tabindex="0" role="button" aria-label="React">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <circle cx="12" cy="12" r="2.2" fill="#61DAFB" />
+                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" />
+                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2"
+                    transform="rotate(60 12 12)" />
+                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2"
+                    transform="rotate(120 12 12)" />
+                </svg></div><span class="kb-key-label">React 19</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="typescript" tabindex="0" role="button" aria-label="TypeScript">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" width="18" height="18">
+                  <rect width="24" height="24" rx="3" fill="#3178C6" />
+                  <path
+                    d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"
+                    fill="white" />
+                </svg></div><span class="kb-key-label">TypeScript</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="postgresql" tabindex="0" role="button" aria-label="PostgreSQL">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <ellipse cx="12" cy="6" rx="8" ry="3" stroke="#336791" stroke-width="1.8" />
+                  <path d="M4 6v6c0 1.657 3.582 3 8 3s8-1.343 8-3V6" stroke="#336791" stroke-width="1.8" />
+                  <path d="M4 12v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" stroke="#336791" stroke-width="1.8" />
+                </svg></div><span class="kb-key-label">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="prisma" tabindex="0" role="button" aria-label="Prisma">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#4A9EF1" width="16" height="16">
+                  <path
+                    d="M21.807 17.49L13.885.442A2.136 2.136 0 0012.01 0h-.02a2.136 2.136 0 00-1.875 1.442L2.192 17.49a2.08 2.08 0 00.46 2.252l7.827 6.258H1a1 1 0 000 2h22a1 1 0 000-2h-9.479l7.827-6.258a2.08 2.08 0 00.459-2.252zM12 3.41l6.154 13.514-6.154 4.925V3.41z" />
+                </svg></div><span class="kb-key-label">Prisma</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="stripe" tabindex="0" role="button" aria-label="Stripe">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#6772E5" width="16" height="16">
+                  <path
+                    d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" />
+                </svg></div><span class="kb-key-label">Stripe</span>
+            </div>
+          </div>
         </div>
 
         <!-- Row 2 -->
         <div class="kb-row">
-          <div class="kb-key kb-deco w1-5" aria-hidden="true"><div class="kb-key-face"><span class="kb-key-label">Tab</span></div></div>
-          <div class="kb-key" data-skill="tailwind" tabindex="0" role="button" aria-label="Tailwind CSS"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#38BDF8" width="18" height="18"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg></div><span class="kb-key-label">Tailwind</span></div></div>
-          <div class="kb-key" data-skill="shadcn" tabindex="0" role="button" aria-label="shadcn/ui"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><span class="kb-key-label">shadcn/ui</span></div></div>
-          <div class="kb-key" data-skill="nextauth" tabindex="0" role="button" aria-label="NextAuth.js"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="#0070f3" stroke-width="2" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><span class="kb-key-label">NextAuth</span></div></div>
-          <div class="kb-key" data-skill="claudeai" tabindex="0" role="button" aria-label="Claude AI"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M17.304 3.541L13.847 12.8l3.457 9.259L24 12.8z" fill="#D4A27F"/><path d="M6.696 3.541L0 12.8l6.696 9.259 3.457-9.259z" fill="#D4A27F"/><path d="M6.696 3.541h10.608L13.847 12.8H10.153z" fill="#C8956C"/></svg></div><span class="kb-key-label">Claude AI</span></div></div>
-          <div class="kb-key" data-skill="vercel" tabindex="0" role="button" aria-label="Vercel"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg></div><span class="kb-key-label">Vercel</span></div></div>
+          <div class="kb-key kb-deco w1-5" aria-hidden="true">
+            <div class="kb-key-face"><span class="kb-key-label">Tab</span></div>
+          </div>
+          <div class="kb-key" data-skill="tailwind" tabindex="0" role="button" aria-label="Tailwind CSS">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#38BDF8" width="18" height="18">
+                  <path
+                    d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                </svg></div><span class="kb-key-label">Tailwind</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="shadcn" tabindex="0" role="button" aria-label="shadcn/ui">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                  width="16" height="16">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg></div><span class="kb-key-label">shadcn/ui</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="nextauth" tabindex="0" role="button" aria-label="NextAuth.js">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="#0070f3" stroke-width="2"
+                  width="16" height="16">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0110 0v4" />
+                </svg></div><span class="kb-key-label">NextAuth</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="claudeai" tabindex="0" role="button" aria-label="Claude AI">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M17.304 3.541L13.847 12.8l3.457 9.259L24 12.8z" fill="#D4A27F" />
+                  <path d="M6.696 3.541L0 12.8l6.696 9.259 3.457-9.259z" fill="#D4A27F" />
+                  <path d="M6.696 3.541h10.608L13.847 12.8H10.153z" fill="#C8956C" />
+                </svg></div><span class="kb-key-label">Claude AI</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="vercel" tabindex="0" role="button" aria-label="Vercel">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="white" width="16" height="16">
+                  <path d="M24 22.525H0l12-21.05 12 21.05z" />
+                </svg></div><span class="kb-key-label">Vercel</span>
+            </div>
+          </div>
         </div>
 
         <!-- Row 3 -->
         <div class="kb-row">
-          <div class="kb-key kb-deco w2" aria-hidden="true"><div class="kb-key-face"><span class="kb-key-label">⌘ Cmd</span></div></div>
-          <div class="kb-key" data-skill="php" tabindex="0" role="button" aria-label="PHP"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 40 20" width="28" height="14"><ellipse cx="20" cy="10" rx="20" ry="10" fill="#8892BF"/><text x="20" y="14" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Arial">PHP</text></svg></div><span class="kb-key-label">PHP</span></div></div>
-          <div class="kb-key" data-skill="mysql" tabindex="0" role="button" aria-label="MySQL"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#4479A1" stroke-width="1.8"/><path d="M4 6v6c0 1.657 3.582 3 8 3s8-1.343 8-3V6" stroke="#4479A1" stroke-width="1.8"/><path d="M4 12v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" stroke="#4479A1" stroke-width="1.8"/></svg></div><span class="kb-key-label">MySQL</span></div></div>
-          <div class="kb-key" data-skill="git" tabindex="0" role="button" aria-label="Git"><div class="kb-key-face"><div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#F05032" width="16" height="16"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg></div><span class="kb-key-label">Git</span></div></div>
-          <div class="kb-key kb-deco w2" aria-hidden="true"><div class="kb-key-face"><span class="kb-key-label">↵ Enter</span></div></div>
+          <div class="kb-key kb-deco w2" aria-hidden="true">
+            <div class="kb-key-face"><span class="kb-key-label">⌘ Cmd</span></div>
+          </div>
+          <div class="kb-key" data-skill="php" tabindex="0" role="button" aria-label="PHP">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 40 20" width="28" height="14">
+                  <ellipse cx="20" cy="10" rx="20" ry="10" fill="#8892BF" /><text x="20" y="14" text-anchor="middle"
+                    fill="white" font-size="10" font-weight="bold" font-family="Arial">PHP</text>
+                </svg></div><span class="kb-key-label">PHP</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="mysql" tabindex="0" role="button" aria-label="MySQL">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <ellipse cx="12" cy="6" rx="8" ry="3" stroke="#4479A1" stroke-width="1.8" />
+                  <path d="M4 6v6c0 1.657 3.582 3 8 3s8-1.343 8-3V6" stroke="#4479A1" stroke-width="1.8" />
+                  <path d="M4 12v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" stroke="#4479A1" stroke-width="1.8" />
+                </svg></div><span class="kb-key-label">MySQL</span>
+            </div>
+          </div>
+          <div class="kb-key" data-skill="git" tabindex="0" role="button" aria-label="Git">
+            <div class="kb-key-face">
+              <div class="kb-key-icon-wrap"><svg viewBox="0 0 24 24" fill="#F05032" width="16" height="16">
+                  <path
+                    d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187" />
+                </svg></div><span class="kb-key-label">Git</span>
+            </div>
+          </div>
+          <div class="kb-key kb-deco w2" aria-hidden="true">
+            <div class="kb-key-face"><span class="kb-key-label">↵ Enter</span></div>
+          </div>
         </div>
 
         <!-- Row 4 — Space bar -->
         <div class="kb-row" style="justify-content:center;">
-          <div class="kb-key kb-deco" aria-hidden="true"><div class="kb-key-face" style="min-width:52px;"><span class="kb-key-label">Alt</span></div></div>
-          <div class="kb-key kb-deco w6" aria-hidden="true"><div class="kb-key-face"><span class="kb-key-label" style="color:#333;font-size:0.6rem;letter-spacing:0.1em;">FULL-STACK DEVELOPER</span></div></div>
-          <div class="kb-key kb-deco" aria-hidden="true"><div class="kb-key-face" style="min-width:52px;"><span class="kb-key-label">Alt</span></div></div>
+          <div class="kb-key kb-deco" aria-hidden="true">
+            <div class="kb-key-face" style="min-width:52px;"><span class="kb-key-label">Alt</span></div>
+          </div>
+          <div class="kb-key kb-deco w6" aria-hidden="true">
+            <div class="kb-key-face"><span class="kb-key-label"
+                style="color:#333;font-size:0.6rem;letter-spacing:0.1em;">FULL-STACK DEVELOPER</span></div>
+          </div>
+          <div class="kb-key kb-deco" aria-hidden="true">
+            <div class="kb-key-face" style="min-width:52px;"><span class="kb-key-label">Alt</span></div>
+          </div>
         </div>
 
       </div>
 
       <!-- Skill detail card -->
-      <div class="skill-detail" id="skillDetail" role="region" aria-live="polite" aria-label="Détails de la compétence"></div>
+      <div class="skill-detail" id="skillDetail" role="region" aria-live="polite" aria-label="Détails de la compétence">
+      </div>
     </div>
 
   </section>
@@ -1429,7 +1905,8 @@
         <div>
           <p class="project-num mono">01 / FEATURED</p>
           <h3 class="project-name">Nkap Control — FinancePME</h3>
-          <p class="project-desc">SaaS de gestion financière pour PME camerounaises. Facturation TVA 19.25%, gestion multi-comptes Mobile Money (MTN, Orange), rapports OHADA, IA Nkap (Claude) et abonnements Stripe.</p>
+          <p class="project-desc">SaaS de gestion financière pour PME camerounaises. Facturation TVA 19.25%, gestion
+            multi-comptes Mobile Money (MTN, Orange), rapports OHADA, IA Nkap (Claude) et abonnements Stripe.</p>
           <div class="project-stack">
             <span class="stack-tag">Next.js 16</span>
             <span class="stack-tag">TypeScript</span>
@@ -1447,8 +1924,12 @@
         <div class="project-meta">
           <span class="project-badge">Featured</span>
           <div class="project-color" style="background:#0070f3;" aria-hidden="true"></div>
-          <a href="https://github.com/timeoseyapdje/SaaS_PME" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Voir le code de Nkap Control sur GitHub">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <a href="https://github.com/timeoseyapdje/SaaS_PME" target="_blank" rel="noopener noreferrer"
+            class="project-link" aria-label="Voir le code de Nkap Control sur GitHub">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
             GitHub
           </a>
         </div>
@@ -1459,7 +1940,8 @@
         <div>
           <p class="project-num mono">02</p>
           <h3 class="project-name">ReWear</h3>
-          <p class="project-desc">Plateforme de vente et d'échange de vêtements de seconde main. Système d'annonces avec filtres, gestion de profils, favoris et panel d'administration avec modération.</p>
+          <p class="project-desc">Plateforme de vente et d'échange de vêtements de seconde main. Système d'annonces avec
+            filtres, gestion de profils, favoris et panel d'administration avec modération.</p>
           <div class="project-stack">
             <span class="stack-tag">PHP</span>
             <span class="stack-tag">MySQL</span>
@@ -1470,7 +1952,11 @@
         <div class="project-meta">
           <div class="project-color" style="background:#de1d8d;" aria-hidden="true"></div>
           <span class="project-link" style="cursor:default; opacity:0.5;" aria-label="Projet privé">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" />
+            </svg>
             Privé
           </span>
         </div>
@@ -1481,7 +1967,8 @@
         <div>
           <p class="project-num mono">03</p>
           <h3 class="project-name">Site de Colocation</h3>
-          <p class="project-desc">Application de mise en relation pour colocataires. Annonces détaillées avec critères, profils utilisateurs, système de recherche géolocalisé et messagerie intégrée.</p>
+          <p class="project-desc">Application de mise en relation pour colocataires. Annonces détaillées avec critères,
+            profils utilisateurs, système de recherche géolocalisé et messagerie intégrée.</p>
           <div class="project-stack">
             <span class="stack-tag">PHP</span>
             <span class="stack-tag">HTML / CSS / JS</span>
@@ -1491,7 +1978,11 @@
         <div class="project-meta">
           <div class="project-color" style="background:#22c55e;" aria-hidden="true"></div>
           <span class="project-link" style="cursor:default; opacity:0.5;" aria-label="Projet privé">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" />
+            </svg>
             Privé
           </span>
         </div>
@@ -1502,7 +1993,8 @@
         <div>
           <p class="project-num mono">04</p>
           <h3 class="project-name">E-commerce</h3>
-          <p class="project-desc">Boutique en ligne complète avec catalogue produits, panier d'achat persistant, gestion des commandes et API REST pour les intégrations tierces.</p>
+          <p class="project-desc">Boutique en ligne complète avec catalogue produits, panier d'achat persistant, gestion
+            des commandes et API REST pour les intégrations tierces.</p>
           <div class="project-stack">
             <span class="stack-tag">PHP</span>
             <span class="stack-tag">MySQL</span>
@@ -1513,7 +2005,11 @@
         <div class="project-meta">
           <div class="project-color" style="background:#f97316;" aria-hidden="true"></div>
           <span class="project-link" style="cursor:default; opacity:0.5;" aria-label="Projet privé">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" />
+            </svg>
             Privé
           </span>
         </div>
@@ -1536,7 +2032,9 @@
         <p class="about-card-label">Background</p>
         <h3 class="about-card-title">Développeur Full-Stack</h3>
         <p class="about-card-text">
-          Je conçois des applications web de bout en bout — de la base de données à l'interface. Mon projet phare, <strong>Nkap Control</strong>, est un SaaS complet adapté aux réalités du marché camerounais : conformité <strong>OHADA</strong>, intégration <strong>Mobile Money</strong>, et IA conversationnelle via Claude.
+          Je conçois des applications web de bout en bout — de la base de données à l'interface. Mon projet phare,
+          <strong>Nkap Control</strong>, est un SaaS complet adapté aux réalités du marché camerounais : conformité
+          <strong>OHADA</strong>, intégration <strong>Mobile Money</strong>, et IA conversationnelle via Claude.
         </p>
       </div>
 
@@ -1544,7 +2042,9 @@
         <p class="about-card-label">Approche</p>
         <h3 class="about-card-title">Engineering Précis</h3>
         <p class="about-card-text">
-          Inspiré par les systèmes comme <strong>Vercel</strong> et <strong>Linear</strong> — je construis des interfaces épurées où chaque élément a une raison d'être. Performance, accessibilité et scalabilité ne sont pas des options, ce sont des contraintes de base.
+          Inspiré par les systèmes comme <strong>Vercel</strong> et <strong>Linear</strong> — je construis des
+          interfaces épurées où chaque élément a une raison d'être. Performance, accessibilité et scalabilité ne sont
+          pas des options, ce sont des contraintes de base.
         </p>
       </div>
 
@@ -1552,7 +2052,8 @@
         <p class="about-card-label">Expertise</p>
         <h3 class="about-card-title">SaaS &amp; Produits</h3>
         <p class="about-card-text">
-          Paiements <strong>Stripe</strong>, authentification JWT, rôles multi-niveaux, abonnements, codes promo, tableaux de bord en temps réel — je couvre l'ensemble du cycle de vie d'un produit SaaS.
+          Paiements <strong>Stripe</strong>, authentification JWT, rôles multi-niveaux, abonnements, codes promo,
+          tableaux de bord en temps réel — je couvre l'ensemble du cycle de vie d'un produit SaaS.
         </p>
       </div>
 
@@ -1560,7 +2061,9 @@
         <p class="about-card-label">Vision</p>
         <h3 class="about-card-title">Tech Africaine</h3>
         <p class="about-card-text">
-          Je crois au potentiel de la tech africaine. Mes projets intègrent les contraintes locales — <strong>MTN Money</strong>, <strong>Orange Money</strong>, fiscalité camerounaise — pour créer des outils réellement adaptés aux besoins du continent.
+          Je crois au potentiel de la tech africaine. Mes projets intègrent les contraintes locales — <strong>MTN
+            Money</strong>, <strong>Orange Money</strong>, fiscalité camerounaise — pour créer des outils réellement
+          adaptés aux besoins du continent.
         </p>
       </div>
     </div>
@@ -1577,12 +2080,21 @@
         Un projet à construire, une opportunité à discuter, ou simplement envie d'échanger — je lis tous mes messages.
       </p>
       <div class="contact-links">
-        <a href="mailto:seyapdjetimeo@gmail.com" class="contact-link contact-link-primary" aria-label="Envoyer un email">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:seyapdjetimeo@gmail.com" class="contact-link contact-link-primary"
+          aria-label="Envoyer un email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
           Envoyer un email
         </a>
-        <a href="https://github.com/timeoseyapdje" target="_blank" rel="noopener noreferrer" class="contact-link contact-link-ghost" aria-label="Profil GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <a href="https://github.com/timeoseyapdje" target="_blank" rel="noopener noreferrer"
+          class="contact-link contact-link-ghost" aria-label="Profil GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
           GitHub
         </a>
       </div>
@@ -1595,7 +2107,8 @@
       <a href="#hero">Timéo Dave Seyapdje</a> &mdash; 2025
     </p>
     <p class="footer-text">
-      Inspiré par <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a> &amp; <a href="https://raycast.com" target="_blank" rel="noopener">Raycast</a> design systems
+      Inspiré par <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a> &amp; <a
+        href="https://raycast.com" target="_blank" rel="noopener">Raycast</a> design systems
     </p>
     <div class="footer-stack" aria-hidden="true">
       <div class="footer-dot" style="background:#0070f3;"></div>
@@ -1607,9 +2120,9 @@
   <script>
     // ─── LOADER ──────────────────────────────────────────────────────────
     (function initLoader() {
-      const loader  = document.getElementById('loader');
-      const bar     = document.getElementById('loaderBar');
-      const pct     = document.getElementById('loaderPct');
+      const loader = document.getElementById('loader');
+      const bar = document.getElementById('loaderBar');
+      const pct = document.getElementById('loaderPct');
       if (!loader) return;
 
       // Block scroll while loading
@@ -1617,7 +2130,7 @@
 
       let progress = 0;
       const target = 100;
-      const step   = () => {
+      const step = () => {
         // Accelerate then decelerate
         const remaining = target - progress;
         progress += Math.max(0.4, remaining * 0.045);
@@ -1636,29 +2149,28 @@
       // Start after a short delay so laptop SVG animates first
       setTimeout(() => requestAnimationFrame(step), 900);
     })();
-    // ─────────────────────────────────────────────────────────────────────
 
     // ─── KEYBOARD INTERACTIF ─────────────────────────────────────────────
     (function initKeyboard() {
       const SKILLS = {
-        nextjs:     { name:'Next.js 16',    color:'#ffffff', bg:'rgba(255,255,255,0.08)', tag:'Full-Stack Framework', level:5, desc:'Framework React de référence. App Router, Server Components, SSR/ISR, API Routes. Utilisé sur Nkap Control avec Next.js 16 et React 19.', projects:['Nkap Control'] },
-        react:      { name:'React 19',      color:'#61DAFB', bg:'rgba(97,218,251,0.1)',  tag:'Frontend',             level:5, desc:'Hooks, Context, Suspense, Server Components. Base de tous mes projets frontend. Maîtrise des patterns avancés (memo, useCallback, custom hooks).', projects:['Nkap Control'] },
-        typescript: { name:'TypeScript',    color:'#3178C6', bg:'rgba(49,120,198,0.12)', tag:'Langage',              level:4, desc:'Typage strict sur tous mes projets. Generics, utility types, types conditionnels. Intégration avec Zod pour la validation runtime.', projects:['Nkap Control'] },
-        postgresql: { name:'PostgreSQL',    color:'#336791', bg:'rgba(51,103,145,0.15)', tag:'Base de données',      level:4, desc:'SGBD relationnel principal. Schémas Prisma, migrations, index, relations complexes (1:N, N:M). Hébergé sur Neon pour Nkap Control.', projects:['Nkap Control'] },
-        prisma:     { name:'Prisma ORM',    color:'#4A9EF1', bg:'rgba(74,158,241,0.12)', tag:'ORM',                  level:5, desc:'ORM type-safe génération de client TypeScript. Migrations, seed, relations, transactions. Prisma Studio pour l\'admin base de données.', projects:['Nkap Control'] },
-        stripe:     { name:'Stripe',        color:'#6772E5', bg:'rgba(103,114,229,0.12)',tag:'Paiements',            level:4, desc:'Intégration complète : abonnements récurrents, webhooks, portail client, codes promo, facturation TVA. Utilisé dans Nkap Control pour les plans SaaS.', projects:['Nkap Control'] },
-        tailwind:   { name:'Tailwind CSS',  color:'#38BDF8', bg:'rgba(56,189,248,0.1)',  tag:'CSS Utility-first',   level:5, desc:'Framework CSS utility-first. Responsive, dark mode, animations, composants avec shadcn/ui. Configuration avancée du design system.', projects:['Nkap Control'] },
-        shadcn:     { name:'shadcn/ui',     color:'#ffffff', bg:'rgba(255,255,255,0.06)', tag:'Composants UI',       level:4, desc:'Bibliothèque de composants accessibles (Radix UI + Tailwind). Formulaires, dialogues, tableaux de données, toasts, sidebars.', projects:['Nkap Control'] },
-        nextauth:   { name:'NextAuth.js',   color:'#0070F3', bg:'rgba(0,112,243,0.12)',  tag:'Authentification',     level:4, desc:'Auth complète : JWT, sessions, providers OAuth, middleware de protection, gestion des rôles (USER/ADMIN). Adaptateur Prisma.', projects:['Nkap Control'] },
-        claudeai:   { name:'Claude AI',     color:'#D4A27F', bg:'rgba(212,162,127,0.12)',tag:'Intelligence Artificielle', level:3, desc:'SDK Anthropic intégré dans Nkap Control : assistant financier "Nkap IA" qui analyse les données et répond aux questions en langage naturel.', projects:['Nkap Control'] },
-        vercel:     { name:'Vercel',        color:'#ffffff', bg:'rgba(255,255,255,0.06)', tag:'Déploiement / DevOps', level:4, desc:'Déploiement continu, Edge Functions, gestion des domaines, variables d\'environnement, analytics. Pipeline CI/CD complet.', projects:['Nkap Control'] },
-        php:        { name:'PHP',           color:'#8892BF', bg:'rgba(136,146,191,0.12)',tag:'Backend',              level:4, desc:'Backend natif MVC. Sessions, authentification, CRUD complet, API REST. Utilisé sur ReWear et le site de colocation.', projects:['ReWear','Site Coloc','E-commerce'] },
-        mysql:      { name:'MySQL',         color:'#4479A1', bg:'rgba(68,121,161,0.12)', tag:'Base de données',      level:3, desc:'SGBD relationnel pour les projets PHP. Conception de schémas, requêtes JOIN, procédures stockées, gestion des transactions.', projects:['ReWear','Site Coloc','E-commerce'] },
-        git:        { name:'Git / GitHub',  color:'#F05032', bg:'rgba(240,80,50,0.1)',   tag:'Versionning',          level:4, desc:'Gestion de version quotidienne. Branches feature, pull requests, résolution de conflits, GitHub Actions pour CI/CD.', projects:['Tous les projets'] },
+        nextjs: { name: 'Next.js 16', color: '#ffffff', bg: 'rgba(255,255,255,0.08)', tag: 'Full-Stack Framework', level: 5, desc: 'Framework React de référence. App Router, Server Components, SSR/ISR, API Routes. Utilisé sur Nkap Control avec Next.js 16 et React 19.', projects: ['Nkap Control'] },
+        react: { name: 'React 19', color: '#61DAFB', bg: 'rgba(97,218,251,0.1)', tag: 'Frontend', level: 5, desc: 'Hooks, Context, Suspense, Server Components. Base de tous mes projets frontend. Maîtrise des patterns avancés (memo, useCallback, custom hooks).', projects: ['Nkap Control'] },
+        typescript: { name: 'TypeScript', color: '#3178C6', bg: 'rgba(49,120,198,0.12)', tag: 'Langage', level: 4, desc: 'Typage strict sur tous mes projets. Generics, utility types, types conditionnels. Intégration avec Zod pour la validation runtime.', projects: ['Nkap Control'] },
+        postgresql: { name: 'PostgreSQL', color: '#336791', bg: 'rgba(51,103,145,0.15)', tag: 'Base de données', level: 4, desc: 'SGBD relationnel principal. Schémas Prisma, migrations, index, relations complexes (1:N, N:M). Hébergé sur Neon pour Nkap Control.', projects: ['Nkap Control'] },
+        prisma: { name: 'Prisma ORM', color: '#4A9EF1', bg: 'rgba(74,158,241,0.12)', tag: 'ORM', level: 5, desc: 'ORM type-safe génération de client TypeScript. Migrations, seed, relations, transactions. Prisma Studio pour l\'admin base de données.', projects: ['Nkap Control'] },
+        stripe: { name: 'Stripe', color: '#6772E5', bg: 'rgba(103,114,229,0.12)', tag: 'Paiements', level: 4, desc: 'Intégration complète : abonnements récurrents, webhooks, portail client, codes promo, facturation TVA. Utilisé dans Nkap Control pour les plans SaaS.', projects: ['Nkap Control'] },
+        tailwind: { name: 'Tailwind CSS', color: '#38BDF8', bg: 'rgba(56,189,248,0.1)', tag: 'CSS Utility-first', level: 5, desc: 'Framework CSS utility-first. Responsive, dark mode, animations, composants avec shadcn/ui. Configuration avancée du design system.', projects: ['Nkap Control'] },
+        shadcn: { name: 'shadcn/ui', color: '#ffffff', bg: 'rgba(255,255,255,0.06)', tag: 'Composants UI', level: 4, desc: 'Bibliothèque de composants accessibles (Radix UI + Tailwind). Formulaires, dialogues, tableaux de données, toasts, sidebars.', projects: ['Nkap Control'] },
+        nextauth: { name: 'NextAuth.js', color: '#0070F3', bg: 'rgba(0,112,243,0.12)', tag: 'Authentification', level: 4, desc: 'Auth complète : JWT, sessions, providers OAuth, middleware de protection, gestion des rôles (USER/ADMIN). Adaptateur Prisma.', projects: ['Nkap Control'] },
+        claudeai: { name: 'Claude AI', color: '#D4A27F', bg: 'rgba(212,162,127,0.12)', tag: 'Intelligence Artificielle', level: 3, desc: 'SDK Anthropic intégré dans Nkap Control : assistant financier "Nkap IA" qui analyse les données et répond aux questions en langage naturel.', projects: ['Nkap Control'] },
+        vercel: { name: 'Vercel', color: '#ffffff', bg: 'rgba(255,255,255,0.06)', tag: 'Déploiement / DevOps', level: 4, desc: 'Déploiement continu, Edge Functions, gestion des domaines, variables d\'environnement, analytics. Pipeline CI/CD complet.', projects: ['Nkap Control'] },
+        php: { name: 'PHP', color: '#8892BF', bg: 'rgba(136,146,191,0.12)', tag: 'Backend', level: 4, desc: 'Backend natif MVC. Sessions, authentification, CRUD complet, API REST. Utilisé sur ReWear et le site de colocation.', projects: ['ReWear', 'Site Coloc', 'E-commerce'] },
+        mysql: { name: 'MySQL', color: '#4479A1', bg: 'rgba(68,121,161,0.12)', tag: 'Base de données', level: 3, desc: 'SGBD relationnel pour les projets PHP. Conception de schémas, requêtes JOIN, procédures stockées, gestion des transactions.', projects: ['ReWear', 'Site Coloc', 'E-commerce'] },
+        git: { name: 'Git / GitHub', color: '#F05032', bg: 'rgba(240,80,50,0.1)', tag: 'Versionning', level: 4, desc: 'Gestion de version quotidienne. Branches feature, pull requests, résolution de conflits, GitHub Actions pour CI/CD.', projects: ['Tous les projets'] },
       };
 
-      const detail     = document.getElementById('skillDetail');
-      let   activeKey  = null;
+      const detail = document.getElementById('skillDetail');
+      let activeKey = null;
 
       document.querySelectorAll('.kb-key[data-skill]').forEach(key => {
         // Click
@@ -1675,8 +2187,8 @@
       });
 
       function activateKey(key) {
-        const id   = key.dataset.skill;
-        const sk   = SKILLS[id];
+        const id = key.dataset.skill;
+        const sk = SKILLS[id];
         if (!sk) return;
 
         // Toggle off if same key
@@ -1718,10 +2230,9 @@
         detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     })();
-    // ─────────────────────────────────────────────────────────────────────
 
     // Mobile nav
-    const burger  = document.getElementById('hamburger');
+    const burger = document.getElementById('hamburger');
     const navList = document.getElementById('navLinks');
     burger.addEventListener('click', () => {
       const open = navList.classList.toggle('open');
@@ -1747,4 +2258,5 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
