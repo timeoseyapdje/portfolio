@@ -278,6 +278,10 @@
       .hamburger {
         display: block;
       }
+
+      .nav-inner {
+        padding: 8px 12px;
+      }
     }
 
     /* ─── HERO ─── */
@@ -297,6 +301,7 @@
     @media (max-width: 900px) {
       #hero {
         grid-template-columns: 1fr;
+        padding: 100px 20px 60px;
       }
 
       #hero-icons {
@@ -304,6 +309,43 @@
         order: -1;
         margin-bottom: 0;
         min-height: 260px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #hero {
+        padding: 90px 16px 48px;
+        min-height: auto;
+      }
+
+      #hero-icons {
+        height: 200px;
+        min-height: 200px;
+      }
+
+      .hero-badge {
+        margin-bottom: 24px;
+      }
+
+      .hero-h1 {
+        margin-bottom: 16px;
+      }
+
+      .hero-desc {
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions a {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero-tech {
+        margin-top: 40px;
       }
     }
 
@@ -702,12 +744,76 @@
     @media (max-width: 560px) {
       .project-row {
         grid-template-columns: 1fr;
-        padding: 24px 20px;
+        padding: 20px 16px;
       }
 
       .project-meta {
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .project-name {
+        font-size: 1rem;
+      }
+
+      .project-desc {
+        font-size: 0.82rem;
+      }
+
+      .section {
+        padding: 48px 16px;
+      }
+
+      .section-desc {
+        margin-bottom: 32px;
+      }
+
+      .contact-card {
+        padding: 32px 20px;
+      }
+
+      .contact-title {
+        font-size: 1.4rem;
+      }
+
+      .contact-sub {
+        font-size: 0.82rem;
+        margin-bottom: 24px;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-link {
+        justify-content: center;
+      }
+
+      .about-card {
+        padding: 20px;
+      }
+
+      footer {
+        padding: 20px 16px;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) and (min-width: 561px) {
+      .section {
+        padding: 60px 20px;
+      }
+
+      .project-row {
+        padding: 24px;
+      }
+
+      .contact-card {
+        padding: 40px 28px;
       }
     }
 
@@ -1434,6 +1540,40 @@
 
       .sd-icon-wrap {
         display: none;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .keyboard {
+        padding: 12px 10px 16px;
+        gap: 4px;
+      }
+
+      .kb-key-face {
+        min-height: 48px;
+        padding: 8px 4px 6px;
+      }
+
+      .kb-key-icon-wrap {
+        width: 16px;
+        height: 16px;
+      }
+
+      .kb-key-label {
+        font-size: 0.52rem;
+      }
+
+      .hero-h1 {
+        font-size: 2.5rem;
+      }
+
+      .tech-pill {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+      }
+
+      .stack-tag {
+        font-size: 0.62rem;
       }
     }
   </style>
