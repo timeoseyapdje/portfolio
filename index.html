@@ -5,6 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Timéo Dave Seyapdje — Développeur Full-Stack</title>
+  <meta name="description" content="Portfolio de Timéo Dave Seyapdje — Développeur Full-Stack basé à Douala. SaaS financiers, plateformes e-commerce, outils IA pour le marché africain." />
+  <meta name="theme-color" content="#111318" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Timéo Dave Seyapdje — Développeur Full-Stack" />
+  <meta property="og:description" content="Applications web performantes — SaaS financiers, plateformes e-commerce, outils IA — avec un focus sur la précision, la scalabilité et le marché africain." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Timéo Dave Seyapdje — Développeur Full-Stack" />
+  <meta name="twitter:description" content="Applications web performantes — SaaS financiers, plateformes e-commerce, outils IA — avec un focus sur le marché africain." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1512,9 +1525,9 @@
         <span class="nav-logo-text"><span class="accent">ts</span></span>
       </a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#about">À propos</a></li>
         <li><a href="#skills">Stack</a></li>
         <li><a href="#projects">Projets</a></li>
-        <li><a href="#about">À propos</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
@@ -1702,10 +1715,61 @@
 
   <div class="divider"></div>
 
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="section" aria-labelledby="about-h2">
+    <div class="reveal">
+      <p class="section-label">// 01 · à propos</p>
+      <h2 class="section-h2" id="about-h2">Qui suis-je ?</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card reveal reveal-delay-1">
+        <p class="about-card-label">Background</p>
+        <h3 class="about-card-title">Développeur Full-Stack</h3>
+        <p class="about-card-text">
+          Je conçois des applications web de bout en bout — de la base de données à l'interface. Mon projet phare,
+          <strong>Nkap Control</strong>, est un SaaS complet adapté aux réalités du marché camerounais : conformité
+          <strong>OHADA</strong>, intégration <strong>Mobile Money</strong>, et IA conversationnelle via Claude.
+        </p>
+      </div>
+
+      <div class="about-card reveal reveal-delay-2">
+        <p class="about-card-label">Approche</p>
+        <h3 class="about-card-title">Engineering Précis</h3>
+        <p class="about-card-text">
+          Inspiré par les systèmes comme <strong>Vercel</strong> et <strong>Linear</strong> — je construis des
+          interfaces épurées où chaque élément a une raison d'être. Performance, accessibilité et scalabilité ne sont
+          pas des options, ce sont des contraintes de base.
+        </p>
+      </div>
+
+      <div class="about-card reveal reveal-delay-1">
+        <p class="about-card-label">Expertise</p>
+        <h3 class="about-card-title">SaaS &amp; Produits</h3>
+        <p class="about-card-text">
+          Paiements <strong>Stripe</strong>, authentification JWT, rôles multi-niveaux, abonnements, codes promo,
+          tableaux de bord en temps réel — je couvre l'ensemble du cycle de vie d'un produit SaaS.
+        </p>
+      </div>
+
+      <div class="about-card reveal reveal-delay-2">
+        <p class="about-card-label">Vision</p>
+        <h3 class="about-card-title">Tech Africaine</h3>
+        <p class="about-card-text">
+          Je crois au potentiel de la tech africaine. Mes projets intègrent les contraintes locales — <strong>MTN
+            Money</strong>, <strong>Orange Money</strong>, fiscalité camerounaise — pour créer des outils réellement
+          adaptés aux besoins du continent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- ─── SKILLS BENTO ─── -->
   <section id="skills" class="section" aria-labelledby="skills-h2">
     <div class="reveal">
-      <p class="section-label">// 01 · stack</p>
+      <p class="section-label">// 02 · stack</p>
       <h2 class="section-h2" id="skills-h2">Technologies</h2>
       <p class="section-desc">Les outils que j'utilise quotidiennement pour construire des produits robustes.</p>
     </div>
@@ -1889,7 +1953,7 @@
   <!-- ─── PROJECTS ─── -->
   <section id="projects" class="section" aria-labelledby="projects-h2">
     <div class="reveal">
-      <p class="section-label">// 02 · projets</p>
+      <p class="section-label">// 03 · projets</p>
       <h2 class="section-h2" id="projects-h2">Réalisations</h2>
       <p class="section-desc">Applications conçues et développées de bout en bout.</p>
     </div>
@@ -1920,8 +1984,102 @@
         <div class="project-meta">
           <span class="project-badge">Featured</span>
           <div class="project-color" style="background:#0070f3;" aria-hidden="true"></div>
+          <a href="https://nkap-control.vercel.app" target="_blank" rel="noopener noreferrer"
+            class="project-link" aria-label="Voir le site Nkap Control">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Voir le site
+          </a>
           <a href="https://github.com/timeoseyapdje/SaaS_PME" target="_blank" rel="noopener noreferrer"
             class="project-link" aria-label="Voir le code de Nkap Control sur GitHub">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
+      <!-- Sylver Screen Cinema -->
+      <article class="project-row" role="listitem">
+        <div>
+          <p class="project-num mono">02</p>
+          <h3 class="project-name">Sylver Screen Cinema</h3>
+          <p class="project-desc">Site complet pour le cinéma Sylver Screen au Douala Grand Mall. Réservation en ligne
+            avec sélection visuelle des places, système de notation, dashboard admin avec gestion des films, séances et
+            tarification dynamique.</p>
+          <div class="project-stack">
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Express.js</span>
+            <span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">JWT</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">Gmail SMTP</span>
+          </div>
+        </div>
+        <div class="project-meta">
+          <div class="project-color" style="background:#7928ca;" aria-hidden="true"></div>
+          <a href="https://github.com/timeoseyapdje/sylver-screen-cinema" target="_blank" rel="noopener noreferrer"
+            class="project-link" aria-label="Voir le code de Sylver Screen Cinema sur GitHub">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
+      <!-- PrixTrack -->
+      <article class="project-row" role="listitem">
+        <div>
+          <p class="project-num mono">03</p>
+          <h3 class="project-name">PrixTrack</h3>
+          <p class="project-desc">Application de suivi de prix en temps réel avec interface style trading. Monitoring
+            des billets TGV SNCF et composants tech (GPU, RAM), graphiques interactifs, carnet d'ordres simulé et
+            statistiques de marché.</p>
+          <div class="project-stack">
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Express</span>
+            <span class="stack-tag">Chart.js</span>
+            <span class="stack-tag">HTML / CSS / JS</span>
+          </div>
+        </div>
+        <div class="project-meta">
+          <div class="project-color" style="background:#f97316;" aria-hidden="true"></div>
+          <a href="https://github.com/timeoseyapdje/price-tracker" target="_blank" rel="noopener noreferrer"
+            class="project-link" aria-label="Voir le code de PrixTrack sur GitHub">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
+      <!-- Geneva Hotel -->
+      <article class="project-row" role="listitem">
+        <div>
+          <p class="project-num mono">04</p>
+          <h3 class="project-name">Geneva Hotel</h3>
+          <p class="project-desc">Site vitrine multi-pages pour un hôtel à Genève. Pages hébergement, restaurant,
+            événements, actualités, FAQ et contact avec design responsive.</p>
+          <div class="project-stack">
+            <span class="stack-tag">HTML</span>
+            <span class="stack-tag">CSS</span>
+            <span class="stack-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-meta">
+          <div class="project-color" style="background:#22c55e;" aria-hidden="true"></div>
+          <a href="https://github.com/timeoseyapdje/geneva-hotel" target="_blank" rel="noopener noreferrer"
+            class="project-link" aria-label="Voir le code de Geneva Hotel sur GitHub">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -1934,7 +2092,7 @@
       <!-- ReWear -->
       <article class="project-row" role="listitem">
         <div>
-          <p class="project-num mono">02</p>
+          <p class="project-num mono">05</p>
           <h3 class="project-name">ReWear</h3>
           <p class="project-desc">Plateforme de vente et d'échange de vêtements de seconde main. Système d'annonces avec
             filtres, gestion de profils, favoris et panel d'administration avec modération.</p>
@@ -1961,7 +2119,7 @@
       <!-- Site de Colocation -->
       <article class="project-row" role="listitem">
         <div>
-          <p class="project-num mono">03</p>
+          <p class="project-num mono">06</p>
           <h3 class="project-name">Site de Colocation</h3>
           <p class="project-desc">Application de mise en relation pour colocataires. Annonces détaillées avec critères,
             profils utilisateurs, système de recherche géolocalisé et messagerie intégrée.</p>
@@ -1987,7 +2145,7 @@
       <!-- E-commerce -->
       <article class="project-row" role="listitem">
         <div>
-          <p class="project-num mono">04</p>
+          <p class="project-num mono">07</p>
           <h3 class="project-name">E-commerce</h3>
           <p class="project-desc">Boutique en ligne complète avec catalogue produits, panier d'achat persistant, gestion
             des commandes et API REST pour les intégrations tierces.</p>
@@ -2011,57 +2169,6 @@
         </div>
       </article>
 
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ─── ABOUT ─── -->
-  <section id="about" class="section" aria-labelledby="about-h2">
-    <div class="reveal">
-      <p class="section-label">// 03 · à propos</p>
-      <h2 class="section-h2" id="about-h2">Qui suis-je ?</h2>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-card reveal reveal-delay-1">
-        <p class="about-card-label">Background</p>
-        <h3 class="about-card-title">Développeur Full-Stack</h3>
-        <p class="about-card-text">
-          Je conçois des applications web de bout en bout — de la base de données à l'interface. Mon projet phare,
-          <strong>Nkap Control</strong>, est un SaaS complet adapté aux réalités du marché camerounais : conformité
-          <strong>OHADA</strong>, intégration <strong>Mobile Money</strong>, et IA conversationnelle via Claude.
-        </p>
-      </div>
-
-      <div class="about-card reveal reveal-delay-2">
-        <p class="about-card-label">Approche</p>
-        <h3 class="about-card-title">Engineering Précis</h3>
-        <p class="about-card-text">
-          Inspiré par les systèmes comme <strong>Vercel</strong> et <strong>Linear</strong> — je construis des
-          interfaces épurées où chaque élément a une raison d'être. Performance, accessibilité et scalabilité ne sont
-          pas des options, ce sont des contraintes de base.
-        </p>
-      </div>
-
-      <div class="about-card reveal reveal-delay-1">
-        <p class="about-card-label">Expertise</p>
-        <h3 class="about-card-title">SaaS &amp; Produits</h3>
-        <p class="about-card-text">
-          Paiements <strong>Stripe</strong>, authentification JWT, rôles multi-niveaux, abonnements, codes promo,
-          tableaux de bord en temps réel — je couvre l'ensemble du cycle de vie d'un produit SaaS.
-        </p>
-      </div>
-
-      <div class="about-card reveal reveal-delay-2">
-        <p class="about-card-label">Vision</p>
-        <h3 class="about-card-title">Tech Africaine</h3>
-        <p class="about-card-text">
-          Je crois au potentiel de la tech africaine. Mes projets intègrent les contraintes locales — <strong>MTN
-            Money</strong>, <strong>Orange Money</strong>, fiscalité camerounaise — pour créer des outils réellement
-          adaptés aux besoins du continent.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -2100,11 +2207,7 @@
   <!-- ─── FOOTER ─── -->
   <footer>
     <p class="footer-text">
-      <a href="#hero">Timéo Dave Seyapdje</a> &mdash; 2025
-    </p>
-    <p class="footer-text">
-      Inspiré par <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a> &amp; <a
-        href="https://raycast.com" target="_blank" rel="noopener">Raycast</a> design systems
+      <a href="#hero">Timéo Dave Seyapdje</a> &mdash; 2026
     </p>
     <div class="footer-stack" aria-hidden="true">
       <div class="footer-dot" style="background:#0070f3;"></div>
