@@ -1513,16 +1513,87 @@
     }
 
     @media (max-width: 700px) {
+      /* ─── STEAM DECK MODE ─── */
       .keyboard {
-        transform: rotateX(14deg) rotateY(0deg);
-        padding: 16px 14px 20px;
-        gap: 5px;
+        transform: none;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+        border-radius: 32px 32px 48px 48px;
+        padding: 56px 16px 40px;
+        background: linear-gradient(170deg, #1e2128, #12141a);
+        box-shadow:
+          0 0 0 2px rgba(255, 255, 255, 0.06),
+          0 0 0 4px #0a0c0f,
+          0 20px 60px rgba(0, 0, 0, 0.8),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06),
+          inset 0 -2px 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: visible;
+      }
+
+      /* Screen bezel */
+      .keyboard::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        right: 12px;
+        bottom: 36px;
+        background: linear-gradient(180deg, #0c0e12, #0a0c10);
+        border-radius: 20px;
+        box-shadow:
+          inset 0 2px 6px rgba(0, 0, 0, 0.8),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+          0 0 0 1px rgba(0, 0, 0, 0.5);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Bottom grip bar with trackpads */
+      .keyboard::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 14px;
+        background: linear-gradient(180deg, #15171d, #0f1115);
+        border-radius: 10px;
+        box-shadow:
+          inset 0 1px 3px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(255, 255, 255, 0.04);
+        z-index: 0;
+      }
+
+      /* Dissolve rows — keys flow into the grid */
+      .kb-row {
+        display: contents;
+      }
+
+      /* Hide decorative keys (ESC, Tab, Cmd, Enter, Alt, Spacebar) */
+      .kb-deco {
+        display: none !important;
+      }
+
+      /* Skill keys as game-icon tiles */
+      .kb-key:not(.kb-deco) {
+        position: relative;
+        z-index: 1;
       }
 
       .kb-key-face {
-        min-height: 56px;
-        padding: 10px 6px 8px;
-        gap: 4px;
+        min-height: 52px;
+        padding: 8px 4px 6px;
+        gap: 3px;
+        border-radius: 10px;
+        background: linear-gradient(160deg, rgba(30, 34, 44, 0.9), rgba(20, 23, 30, 0.9));
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.08),
+          0 2px 0 0 #0a0c0f,
+          0 3px 0 0 rgba(255, 255, 255, 0.02),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
       .kb-key-icon-wrap {
@@ -1531,7 +1602,18 @@
       }
 
       .kb-key-label {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
+      }
+
+      /* Active state — neon glow for Steam Deck vibe */
+      .kb-key.active .kb-key-face {
+        background: linear-gradient(160deg, rgba(0, 112, 243, 0.25), rgba(0, 80, 200, 0.18));
+        box-shadow:
+          0 0 0 1px rgba(0, 112, 243, 0.6),
+          0 2px 0 0 rgba(0, 70, 180, 0.4),
+          0 0 24px rgba(0, 112, 243, 0.3),
+          0 0 48px rgba(0, 112, 243, 0.1),
+          inset 0 1px 0 rgba(100, 180, 255, 0.2);
       }
 
       .skill-detail.open {
@@ -1541,17 +1623,27 @@
       .sd-icon-wrap {
         display: none;
       }
+
+      /* Reset flex properties for grid children */
+      .kb-key {
+        flex: unset;
+      }
+
+      .kb-key.w1, .kb-key.w1-5, .kb-key.w2, .kb-key.w2-5, .kb-key.w6 {
+        flex: unset;
+      }
     }
 
     @media (max-width: 400px) {
       .keyboard {
-        padding: 12px 10px 16px;
-        gap: 4px;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 50px 12px 36px;
+        gap: 5px;
       }
 
       .kb-key-face {
-        min-height: 48px;
-        padding: 8px 4px 6px;
+        min-height: 46px;
+        padding: 6px 3px 5px;
       }
 
       .kb-key-icon-wrap {
@@ -1560,7 +1652,7 @@
       }
 
       .kb-key-label {
-        font-size: 0.52rem;
+        font-size: 0.5rem;
       }
 
       .hero-h1 {
